@@ -106,9 +106,14 @@ function ProjectCard({ project }: { project: Project }) {
 
       // 2. Creación de la animación de Hover
       // Se crea una timeline PAUSADA. Se activará con los eventos del mouse.
-      hoverTimeline.current = gsap.timeline({ paused: true })
-        .to(cardRef.current?.querySelector(".project-title"), { y: -8, duration: 0.4 })
-        .to(cardRef.current?.querySelector(".project-description"), { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
+      const title = cardRef.current?.querySelector('.project-title');
+      const description = cardRef.current?.querySelector('.project-description');
+
+      if (title && description) {
+        hoverTimeline.current = gsap.timeline({ paused: true })
+          .to(title, { y: -8, duration: 0.4 })
+          .to(description, { opacity: 1, y: 0, duration: 0.5 }, "-=0.3");
+      }
 
     }, cardRef)
 
