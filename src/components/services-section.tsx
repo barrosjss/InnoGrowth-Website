@@ -1,8 +1,12 @@
 "use client";
 
 import type React from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { Pacifico } from "next/font/google";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   LucideBuilding,
   LucideUtensils,
@@ -12,13 +16,14 @@ import {
   LucideCheck,
   LucideArrowRight,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 import Restaurants from "@/assets/img/restauranteInow.png";
 import Contruccion from "@/assets/img/contrucInow.png";
 import Hotel from "@/assets/img/holtelInow.png";
 import Call from "@/assets/img/callInow.png";
 import Shop from "@/assets/img/shopInow.png";
-import Image from "next/image";
+
+// Registrar el plugin de ScrollTrigger para las animaciones de scroll.
+gsap.registerPlugin(ScrollTrigger);
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -36,21 +41,42 @@ interface ServiceProps {
   img: string;
 }
 
+/**
+ * Componente para mostrar una única tarjeta de servicio.
+ * Cada tarjeta gestiona su propia animación de entrada al hacer scroll.
+ */
 function ServiceCard({
   icon,
   title,
   description,
   features,
-  index,
   isReversed = false,
   img,
 }: ServiceProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Contexto de GSAP para la limpieza automática de animaciones.
+    const ctx = gsap.context(() => {
+      // Animación simple de "fade in" y "slide up" para la tarjeta.
+      gsap.from(cardRef.current, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        // ScrollTrigger hace que la animación se dispare al entrar en el viewport.
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top 85%", // Comienza cuando el 85% superior de la tarjeta es visible.
+          toggleActions: "play none none none", // Solo se reproduce una vez.
+        },
+      });
+    }, cardRef);
+    return () => ctx.revert(); // Limpieza al desmontar el componente.
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-      viewport={{ once: true }}
+    <div
+      ref={cardRef}
       className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${
         isReversed ? "md:flex-row-reverse" : ""
       }`}
@@ -101,11 +127,37 @@ function ServiceCard({
           <LucideArrowRight className="w-4 h-4" />
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
+/**
+ * Componente que renderiza la sección completa de "Servicios",
+ * incluyendo una cabecera y una lista de `ServiceCard`.
+ */
 export default function ServicesSection() {
+  // Ref para el contenedor de la cabecera de la sección.
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Contexto de GSAP para la animación de la cabecera.
+    const ctx = gsap.context(() => {
+      // Timeline para animar los elementos de la cabecera en secuencia.
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+      // Animación escalonada para el tag, el título y el subtítulo.
+      tl.from(".service-title-tag", { opacity: 0, y: 30, duration: 0.8 })
+        .from(".service-title", { opacity: 0, y: 30, duration: 0.8 }, "-=0.6")
+        .from(".service-subtitle", { opacity: 0, y: 30, duration: 0.8 }, "-=0.6");
+    }, headerRef);
+    return () => ctx.revert(); // Limpieza de la animación.
+  }, []);
+
   const services = [
     {
       icon: <LucideUtensils className="w-6 h-6 text-primary-400" />,
@@ -186,25 +238,17 @@ export default function ServicesSection() {
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-4"
+        <div className="text-center mb-16 md:mb-20" ref={headerRef}>
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-4 service-title-tag"
           >
             <span className="text-sm text-white/60 tracking-wide">
               Sectores
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold mb-4 tracking-tight"
+          <h2
+            className="text-3xl md:text-5xl font-bold mb-4 tracking-tight service-title"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
               Sectores a los que
@@ -217,18 +261,14 @@ export default function ServicesSection() {
             >
               Servimos
             </span>
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-white/40 max-w-2xl mx-auto"
+          <p
+            className="text-white/40 max-w-2xl mx-auto service-subtitle"
           >
             Ofrecemos soluciones especializadas para potenciar el crecimiento y
             la eficiencia en diversos sectores empresariales.
-          </motion.p>
+          </p>
         </div>
 
         <div className="space-y-24">

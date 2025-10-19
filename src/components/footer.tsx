@@ -1,6 +1,10 @@
 "use client"
+
+import { useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import {
   LucidePhone,
   LucideMail,
@@ -12,7 +16,17 @@ import {
   LucideTwitter,
 } from "lucide-react"
 
+// Registrar el plugin de ScrollTrigger para las animaciones de scroll.
+gsap.registerPlugin(ScrollTrigger)
+
+/**
+ * Componente del pie de página del sitio web.
+ * Contiene información de contacto, enlaces de navegación y redes sociales.
+ */
 export default function Footer() {
+  const footerRef = useRef<HTMLDivElement>(null)
+
+  // Función para hacer scroll suave hasta la parte superior de la página.
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -20,12 +34,32 @@ export default function Footer() {
     })
   }
 
+  useEffect(() => {
+    // Contexto de GSAP para la animación de las columnas del footer.
+    const ctx = gsap.context(() => {
+      // Anima todos los elementos con la clase `.footer-col` de forma escalonada.
+      gsap.from(".footer-col", {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        stagger: 0.15, // Añade un retraso de 0.15s entre la animación de cada columna.
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: "top 95%", // La animación empieza cuando el 95% superior del footer es visible.
+          toggleActions: "play none none none",
+        },
+      })
+    }, footerRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <footer id="footer" className="relative w-full bg-[#030303] border-t border-white/[0.08] pt-16 pb-8">
+    <footer id="footer" className="relative w-full bg-[#030303] border-t border-white/[0.08] pt-16 pb-8" ref={footerRef}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Logo y descripción */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 footer-col">
             <div className="flex items-center gap-2 mb-4">
               <Image src="/logo.svg" alt="InnoGrowth" width={32} height={32} />
               <span className="text-xl font-bold text-white">InnoGrowth</span>
@@ -68,7 +102,7 @@ export default function Footer() {
           </div>
 
           {/* Enlaces rápidos */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 footer-col">
             <h3 className="text-white font-semibold mb-4">Enlaces rápidos</h3>
             <ul className="space-y-2">
               {[
@@ -94,7 +128,7 @@ export default function Footer() {
           </div>
 
           {/* Servicios */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 footer-col">
             <h3 className="text-white font-semibold mb-4">Servicios</h3>
             <ul className="space-y-2">
               {[
@@ -114,7 +148,7 @@ export default function Footer() {
           </div>
 
           {/* Contacto */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 footer-col">
             <h3 className="text-white font-semibold mb-4">Contacto</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">

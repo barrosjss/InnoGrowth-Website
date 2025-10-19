@@ -1,9 +1,11 @@
 "use client"
 
 import type React from "react"
-
-import { motion } from "framer-motion"
+import { useEffect, useRef } from "react"
 import { Pacifico } from "next/font/google"
+import { cn } from "@/lib/utils"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import {
   LucidePhone,
   LucideMail,
@@ -14,7 +16,9 @@ import {
   LucideFacebook,
   LucideTwitter,
 } from "lucide-react"
-import { cn } from "@/lib/utils"
+
+// Registrar el plugin de ScrollTrigger para las animaciones de scroll.
+gsap.registerPlugin(ScrollTrigger)
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -22,25 +26,21 @@ const pacifico = Pacifico({
   variable: "--font-pacifico",
 })
 
+/**
+ * Componente para mostrar un único dato de contacto (teléfono, email, etc.)
+ */
 function ContactInfo({
   icon,
   title,
   content,
-  index,
 }: {
   icon: React.ReactNode
   title: string
   content: string
-  index: number
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-      viewport={{ once: true }}
-      className="flex gap-4"
-    >
+    // La clase `contact-info-item` se usa como selector para la animación de stagger en el componente padre.
+    <div className="flex gap-4 contact-info-item">
       <div className="flex-shrink-0">
         <div
           className={cn(
@@ -56,39 +56,61 @@ function ContactInfo({
         <h3 className="text-sm font-medium text-white/60 mb-1">{title}</h3>
         <p className="text-white">{content}</p>
       </div>
-    </motion.div>
+    </div>
   )
 }
 
+/**
+ * Componente que renderiza la sección de "Contacto", con un formulario a la izquierda
+ * y la información de contacto a la derecha.
+ */
 export default function ContactSection() {
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Timeline para orquestar la animación de toda la sección.
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          toggleActions: "play none none none",
+        },
+      })
+
+      // La secuencia anima primero la columna izquierda (títulos y formulario)
+      tl.from(".contact-title-tag", { opacity: 0, y: 30, duration: 0.8 })
+        .from(".contact-title", { opacity: 0, y: 30, duration: 0.8 }, "-=0.6")
+        .from(".contact-subtitle", { opacity: 0, y: 30, duration: 0.8 }, "-=0.6")
+        .from(".contact-form", { opacity: 0, y: 30, duration: 0.8 }, "-=0.6")
+        // Luego, anima la columna derecha (la tarjeta de información)
+        .from(".contact-info-card", { opacity: 0, y: 30, duration: 0.8 }, "<+=0.2")
+        // Finalmente, anima los items dentro de la tarjeta de información de forma escalonada.
+        .from(".contact-info-item", { opacity: 0, y: 20, stagger: 0.2, duration: 0.6 }, "-=0.4")
+        .from(".contact-socials", { opacity: 0, y: 20, duration: 0.6 }, "-=0.4")
+
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <div className="relative w-full py-24 md:py-32 overflow-hidden bg-[#030303]">
+    // El ID se coloca en el contenedor principal para que el scroll-spy de la navbar lo detecte.
+    <div id="contact" className="relative w-full py-24 md:py-32 overflow-hidden bg-[#030303]" ref={sectionRef}>
       <div className="absolute inset-0 bg-gradient-to-br from-primary-700/[0.03] via-transparent to-primary-500/[0.03] blur-3xl" />
 
       {/* Decorative elements */}
-      <div id="contact" className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
           {/* Left column - Contact Form */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-4"
-            >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-4 contact-title-tag">
               <span className="text-sm text-white/60 tracking-wide">Contacto</span>
-            </motion.div>
+            </div>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold mb-6 tracking-tight"
-            >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight contact-title">
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">¿Listo para</span>
               <span
                 className={cn(
@@ -102,25 +124,13 @@ export default function ContactSection() {
                 {" "}
                 tu empresa?
               </span>
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-white/40 mb-8"
-            >
+            <p className="text-white/40 mb-8 contact-subtitle">
               Contáctanos hoy mismo y descubre cómo podemos ayudarte a alcanzar tus objetivos de negocio.
-            </motion.p>
+            </p>
 
-            <motion.form
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
+            <form className="space-y-6 contact-form">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-white/60 mb-2">
@@ -184,49 +194,35 @@ export default function ContactSection() {
                 Enviar mensaje
                 <LucideSend className="w-4 h-4 ml-2" />
               </button>
-            </motion.form>
+            </form>
           </div>
 
           {/* Right column - Contact Info */}
           <div className="lg:pl-8">
-            <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-8 backdrop-blur-sm h-full">
-              <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-2xl font-bold mb-8 text-white"
-              >
+            <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-8 backdrop-blur-sm h-full contact-info-card">
+              <h3 className="text-2xl font-bold mb-8 text-white">
                 Información de contacto
-              </motion.h3>
+              </h3>
 
               <div className="space-y-8 mb-12">
                 <ContactInfo
                   icon={<LucidePhone className="w-5 h-5 text-primary-300" />}
                   title="Teléfono"
                   content="+57 3004986307"
-                  index={0}
                 />
                 <ContactInfo
                   icon={<LucideMail className="w-5 h-5 text-primary-300" />}
                   title="Email"
                   content="contact@innogrowth.co"
-                  index={1}
                 />
                 <ContactInfo
                   icon={<LucideMapPin className="w-5 h-5 text-primary-300" />}
                   title="Dirección"
                   content="Calle 35a #17-74"
-                  index={2}
                 />
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                viewport={{ once: true }}
-              >
+              <div className="contact-socials">
                 <h4 className="text-lg font-medium mb-4 text-white">Síguenos</h4>
                 <div className="flex gap-4">
                   <a
@@ -260,7 +256,7 @@ export default function ContactSection() {
                     <span className="sr-only">LinkedIn</span>
                   </a>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

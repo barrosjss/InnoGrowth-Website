@@ -1,12 +1,16 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
+import { useRef, useEffect } from "react"
 import { Pacifico } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
 import { LucideArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+// Registrar el plugin de ScrollTrigger para las animaciones de scroll.
+gsap.registerPlugin(ScrollTrigger)
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -23,6 +27,7 @@ interface Project {
   size: "large" | "medium" | "small"
 }
 
+// Datos de ejemplo para los proyectos.
 const projects: Project[] = [
   {
     id: "petluv-app",
@@ -74,22 +79,54 @@ const projects: Project[] = [
   },
 ]
 
+/**
+ * Componente para una única tarjeta de proyecto.
+ * Implementa dos animaciones: una para la entrada con scroll y otra para la interacción con el mouse (hover).
+ */
 function ProjectCard({ project }: { project: Project }) {
-  const [isHovered, setIsHovered] = useState(false)
+  const cardRef = useRef<HTMLDivElement>(null)
+  // Ref para almacenar la timeline de la animación de hover. 
+  // Se usa useRef para que la timeline persista entre renders sin tener que recrearla.
+  const hoverTimeline = useRef<gsap.core.Timeline | null>(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 1. Animación de entrada (Scroll-triggered)
+      gsap.from(cardRef.current, {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        delay: Math.random() * 0.3, // Un delay aleatorio para un efecto de aparición más orgánico.
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      })
+
+      // 2. Creación de la animación de Hover
+      // Se crea una timeline PAUSADA. Se activará con los eventos del mouse.
+      hoverTimeline.current = gsap.timeline({ paused: true })
+        .to(cardRef.current?.querySelector(".project-title"), { y: -8, duration: 0.4 })
+        .to(cardRef.current?.querySelector(".project-description"), { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
+
+    }, cardRef)
+
+    return () => ctx.revert()
+  }, [])
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: Math.random() * 0.3 }}
-      viewport={{ once: true }}
+    <div
+      ref={cardRef}
       className={cn(
         "relative overflow-hidden rounded-xl group",
         project.size === "large" ? "row-span-2 col-span-2" : "",
         project.size === "medium" ? "col-span-2" : "",
       )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      // Los eventos del mouse simplemente reproducen o revierten la timeline pre-construida.
+      // Esto es mucho más performante que usar el estado de React para animaciones.
+      onMouseEnter={() => hoverTimeline.current?.play()}
+      onMouseLeave={() => hoverTimeline.current?.reverse()}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-primary-700/20 z-10" />
 
@@ -103,44 +140,53 @@ function ProjectCard({ project }: { project: Project }) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20" />
 
       <div className="absolute bottom-0 left-0 right-0 p-6 z-30">
-        <div className="overflow-hidden">
-          <motion.span
-            initial={{ opacity: 0.7, y: 0 }}
-            animate={{ opacity: isHovered ? 0.9 : 0.7, y: 0 }}
-            className="text-xs font-medium uppercase tracking-wider text-primary-200 mb-2 inline-block"
-          >
-            {project.category}
-          </motion.span>
-        </div>
+        <span className="text-xs font-medium uppercase tracking-wider text-primary-200 mb-2 inline-block">
+          {project.category}
+        </span>
 
         <div className="overflow-hidden">
-          <motion.h3
-            initial={{ y: 0 }}
-            animate={{ y: isHovered ? -8 : 0 }}
-            transition={{ duration: 0.4 }}
+          <h3
             className={cn(
-              "font-bold text-white mb-2",
+              "font-bold text-white mb-2 project-title",
               project.size === "large" ? "text-2xl md:text-3xl" : "text-xl md:text-2xl",
             )}
           >
             {project.title}
-          </motion.h3>
+          </h3>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
-          transition={{ duration: 0.5 }}
-          className="text-white/70 text-sm"
-        >
+        {/* La descripción empieza con opacidad 0 y se anima con la timeline de hover */}
+        <div className="text-white/70 text-sm project-description opacity-0 transform translate-y-5">
           {project.description}
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 
+/**
+ * Componente que renderiza la sección completa de "Proyectos".
+ */
 export default function ProjectsSection() {
+  const headerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Animación para la cabecera de la sección.
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      })
+      tl.from(".portfolio-title-tag", { opacity: 0, y: 30, duration: 0.8 })
+        .from(".portfolio-title", { opacity: 0, y: 30, duration: 0.8 }, "-=0.6")
+        .from(".portfolio-subtitle", { opacity: 0, y: 30, duration: 0.8 }, "-=0.6")
+    }, headerRef)
+    return () => ctx.revert()
+  }, [])
+
   return (
     <div className="relative w-full py-24 md:py-32 overflow-hidden bg-[#030303]" id="projects">
       <div className="absolute inset-0 bg-gradient-to-br from-primary-700/[0.03] via-transparent to-primary-500/[0.03] blur-3xl" />
@@ -150,24 +196,12 @@ export default function ProjectsSection() {
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-4"
-          >
+        <div className="text-center mb-16 md:mb-20" ref={headerRef}>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-4 portfolio-title-tag">
             <span className="text-sm text-white/60 tracking-wide">Portafolio</span>
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold mb-4 tracking-tight"
-          >
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight portfolio-title">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">Casos de</span>
             <span
               className={cn(
@@ -177,18 +211,12 @@ export default function ProjectsSection() {
             >
               Éxito
             </span>
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-white/40 max-w-2xl mx-auto"
-          >
+          <p className="text-white/40 max-w-2xl mx-auto portfolio-subtitle">
             Descubre algunos de nuestros proyectos más destacados y cómo hemos ayudado a empresas de diversos sectores a
             transformar digitalmente sus operaciones.
-          </motion.p>
+          </p>
         </div>
 
         {/* Bento grid layout */}
