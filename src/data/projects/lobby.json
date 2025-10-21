@@ -1,0 +1,22 @@
+{
+  "id": "lobby",
+  "title": "Lobby – Plataforma de reservas y gestión hotelera",
+  "description": "Desarrollo de una plataforma estilo Booking/Airbnb para la gestión integral de hoteles, hostales, glampings y apartahoteles. Incluye marketplace de habitaciones, motor de reservas directas y la posibilidad de contratar servicios adicionales.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "HOSPITALITY PLATFORM",
+  "client": "LobbyPMS (producto B2B SaaS para el sector hotelero)",
+  "year": "2024",
+  "challenge": "Diseñar un sistema todo en uno que integrara PMS, Channel Manager, POS y facturación electrónica, garantizando sincronización en tiempo real con OTAs globales y una experiencia fluida para huéspedes y administradores.",
+  "solution": "Desarrollamos una plataforma integral que combina todas las herramientas necesarias para la gestión hotelera moderna, con integración completa con las principales OTAs globales y funcionalidades avanzadas de reservas.",
+  "results": [
+    "Integración exitosa con Airbnb, Booking.com, Hostelworld y Expedia",
+    "Sincronización en tiempo real del 99.9% con OTAs globales",
+    "Sistema completo PMS + Channel Manager + POS integrado",
+    "Plataforma B2B SaaS escalable para el sector hotelero"
+  ],
+  "technologies": ["Next.js", "Node.js", "PostgreSQL", "OTA APIs", "Payment Gateway", "AWS"],
+  "date": "2024-03-01",
+  "demoUrl": "https://lobbypms.com",
+  "githubUrl": null,
+  "developmentTime": "2 años (en curso)"
+}

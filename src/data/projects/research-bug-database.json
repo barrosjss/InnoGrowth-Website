@@ -1,0 +1,23 @@
+{
+  "id": "research-bug-database",
+  "title": "Research & Bug Database",
+  "description": "Sistema centralizado para seguimiento y gestión de incidencias en desarrollo de software.",
+  "image": "/placeholder.svg?height=300&width=600",
+  "category": "DASHBOARD",
+  "client": "DevSecOps Inc.",
+  "year": "2023",
+  "challenge": "DevSecOps Inc. necesitaba un sistema centralizado para gestionar bugs, incidencias de seguridad y seguimiento de investigación en múltiples proyectos de desarrollo.",
+  "solution": "Desarrollamos un dashboard integral con sistema de tickets, seguimiento de bugs, gestión de incidencias de seguridad, y herramientas de investigación colaborativa con integración a repositorios Git.",
+  "results": [
+    "Reducción del 40% en tiempo de resolución de bugs",
+    "Mejora del 60% en seguimiento de incidencias de seguridad",
+    "Incremento del 35% en productividad del equipo de desarrollo",
+    "Centralización de 15+ proyectos en una sola plataforma"
+  ],
+  "technologies": ["React", "Node.js", "PostgreSQL", "Redis", "Docker", "AWS"],
+  "date": "2023-05-10",
+  "demoUrl": "https://bugtracker.devsecops.com",
+  "githubUrl": "https://github.com/devsecops/bug-database",
+  "developmentTime": "5 meses",
+  "status": "Completado"
+}

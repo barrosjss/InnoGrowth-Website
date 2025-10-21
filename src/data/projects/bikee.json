@@ -1,0 +1,22 @@
+{
+  "id": "bikee",
+  "title": "Bikee – Plataforma de alquiler de bicicletas",
+  "description": "Aplicación para facilitar el alquiler de bicicletas eléctricas y convencionales a precios accesibles.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "MOBILE APP",
+  "client": "Bikee",
+  "year": "2021",
+  "challenge": "Crear un sistema que permitiera a los usuarios consultar disponibilidad, ubicación, tipo y precio de bicicletas, además de integrar métodos de pago y reportes para administradores.",
+  "solution": "Desarrollamos una aplicación completa que facilita el alquiler de bicicletas, con sistema de consulta de disponibilidad, integración de pagos y herramientas de administración.",
+  "results": [
+    "Sistema de alquiler de bicicletas implementado exitosamente",
+    "Consulta de disponibilidad, ubicación y precios en tiempo real",
+    "Integración de métodos de pago con 98% de transacciones exitosas",
+    "Sistema de reportes para administradores implementado"
+  ],
+  "technologies": ["React Native", "Node.js", "MongoDB", "GPS Integration", "Payment Gateway", "AWS"],
+  "date": "2021-08-15",
+  "demoUrl": "https://bikee.com",
+  "githubUrl": null,
+  "developmentTime": "1 mes (MVP)"
+}

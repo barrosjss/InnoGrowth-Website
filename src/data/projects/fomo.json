@@ -1,0 +1,22 @@
+{
+  "id": "fomo",
+  "title": "FOMO – Plataforma de eventos y ticketing",
+  "description": "Startup EventTech enfocada en la gestión integral de eventos: creación de eventos, venta de entradas, administración de organizadores, CRM y panel analítico.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "WEB PLATFORM",
+  "client": "FOMO",
+  "year": "2024",
+  "challenge": "Integrar PULEP (regulador de espectáculos en Colombia), pasarela de pagos, sistema de membresías y un editor drag-and-drop para organizadores.",
+  "solution": "Desarrollamos una plataforma completa que integra todas las necesidades del sector de eventos, desde la creación hasta la venta de entradas, con cumplimiento regulatorio y herramientas avanzadas de gestión.",
+  "results": [
+    "Integración exitosa con PULEP para cumplimiento regulatorio",
+    "Sistema de membresías implementado con 500+ organizadores activos",
+    "Editor drag-and-drop que reduce tiempo de creación de eventos en 70%",
+    "Pasarela de pagos con 99.8% de transacciones exitosas"
+  ],
+  "technologies": ["React", "Node.js", "PostgreSQL", "Stripe", "PULEP API", "AWS"],
+  "date": "2024-02-01",
+  "demoUrl": "https://fomo.com.co",
+  "githubUrl": null,
+  "developmentTime": "6 meses (fase 1) + mejoras continuas"
+}

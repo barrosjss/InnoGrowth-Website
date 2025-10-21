@@ -1,0 +1,23 @@
+{
+  "id": "architectural-visualization",
+  "title": "Architectural Visualization",
+  "description": "Visualización 3D de proyectos arquitectónicos con realidad aumentada para clientes.",
+  "image": "/placeholder.svg?height=400&width=400",
+  "category": "3D VISUALIZATION",
+  "client": "ArchModern Studios",
+  "year": "2023",
+  "challenge": "ArchModern Studios necesitaba una solución para mostrar proyectos arquitectónicos a clientes de manera inmersiva, combinando visualización 3D con realidad aumentada para una mejor comprensión del diseño.",
+  "solution": "Creamos una plataforma web y móvil con visualización 3D interactiva, integración de realidad aumentada, tours virtuales, y herramientas de colaboración para que los clientes puedan explorar y comentar los diseños en tiempo real.",
+  "results": [
+    "Incremento del 70% en aprobación de proyectos por parte de clientes",
+    "Reducción del 50% en tiempo de presentación de diseños",
+    "Mejora del 85% en comprensión de proyectos por parte de clientes",
+    "Más de 200 proyectos visualizados exitosamente"
+  ],
+  "technologies": ["Three.js", "WebGL", "AR.js", "React", "Node.js", "Blender API"],
+  "date": "2023-11-05",
+  "demoUrl": "https://archviz.archmodern.com",
+  "githubUrl": "https://github.com/archmodern/visualization",
+  "developmentTime": "6 meses",
+  "status": "Completado"
+}

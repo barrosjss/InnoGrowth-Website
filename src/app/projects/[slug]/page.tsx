@@ -2,57 +2,21 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import ProjectCTA from "@/components/project-cta"
+import { getProjectById, getAllProjectIds } from "@/lib/projects"
+import { notFound } from "next/navigation"
 
-// En una aplicación real, estos datos vendrían de una API o CMS
-const projects = {
-  "petluv-app": {
-    title: "PetLuv App",
-    description:
-      "Aplicación móvil para cuidado de mascotas con sistema de recordatorios y seguimiento de salud. Desarrollamos una solución integral que permite a los dueños de mascotas gestionar citas veterinarias, medicamentos, vacunas y actividades diarias.",
-    image: "/placeholder.svg?height=600&width=1200",
-    category: "MOBILE APP",
-    client: "PetLuv Inc.",
-    year: "2024",
-    challenge:
-      "PetLuv necesitaba una aplicación intuitiva que ayudara a los dueños de mascotas a mantener un seguimiento completo de la salud y cuidados de sus animales, con recordatorios personalizables y almacenamiento de registros médicos.",
-    solution:
-      "Desarrollamos una aplicación móvil multiplataforma con un sistema de recordatorios inteligentes, seguimiento de medicamentos, registro de vacunas, y almacenamiento de documentos médicos. La aplicación incluye integración con calendarios y notificaciones personalizables.",
-    results: [
-      "Incremento del 45% en adherencia a tratamientos veterinarios",
-      "Reducción del 30% en citas perdidas",
-      "Satisfacción del usuario de 4.8/5 en tiendas de aplicaciones",
-      "Más de 50,000 descargas en los primeros 3 meses",
-    ],
-    technologies: ["React Native", "Firebase", "Node.js", "MongoDB", "AWS"],
-  },
-  greenserve: {
-    title: "GreenServe",
-    description:
-      "Plataforma web para gestión de servicios ecológicos y sostenibles para empresas. Desarrollamos un sistema completo que permite a las empresas contratar, gestionar y evaluar servicios ecológicos de proveedores verificados.",
-    image: "/placeholder.svg?height=600&width=1200",
-    category: "WEB PLATFORM",
-    client: "GreenTech Solutions",
-    year: "2023",
-    challenge:
-      "GreenTech Solutions buscaba crear un marketplace que conectara empresas con proveedores de servicios ecológicos verificados, facilitando la transición hacia operaciones más sostenibles.",
-    solution:
-      "Implementamos una plataforma web con sistema de verificación de proveedores, marketplace de servicios ecológicos, sistema de evaluación y métricas de impacto ambiental para cada servicio contratado.",
-    results: [
-      "Más de 200 proveedores verificados en la plataforma",
-      "Reducción promedio del 25% en huella de carbono para empresas cliente",
-      "Incremento del 60% en contratación de servicios sostenibles",
-      "Ahorro promedio del 15% en costos operativos para empresas",
-    ],
-    technologies: ["Next.js", "PostgreSQL", "Stripe", "Docker", "Google Cloud"],
-  },
-  // Otros proyectos...
+export async function generateStaticParams() {
+  const projectIds = await getAllProjectIds()
+  return projectIds.map((id) => ({
+    slug: id,
+  }))
 }
 
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
-  const project = projects[params.slug as keyof typeof projects]
+export default async function ProjectDetail({ params }: { params: { slug: string } }) {
+  const project = await getProjectById(params.slug)
 
   if (!project) {
-    return <div className="min-h-screen flex items-center justify-center">Proyecto no encontrado</div>
+    notFound()
   }
 
   return (
@@ -79,27 +43,145 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div>
               <h3 className="text-lg font-semibold text-white mb-2">Cliente</h3>
               <p className="text-white/60">{project.client}</p>
             </div>
+            {project.year && (
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">Año</h3>
+                <p className="text-white/60">{project.year}</p>
+              </div>
+            )}
+            {project.location && (
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">Ubicación</h3>
+                <p className="text-white/60">{project.location}</p>
+              </div>
+            )}
+            {project.developmentTime && (
             <div>
-              <h3 className="text-lg font-semibold text-white mb-2">Año</h3>
-              <p className="text-white/60">{project.year}</p>
+                <h3 className="text-lg font-semibold text-white mb-2">Duración</h3>
+                <p className="text-white/60">{project.developmentTime}</p>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-2">Categoría</h3>
-              <p className="text-white/60">{project.category}</p>
-            </div>
+            )}
           </div>
 
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-white mb-4">El Desafío</h2>
-            <p className="text-white/60 mb-8">{project.challenge}</p>
+            {project.context && (
+              <>
+                <h2 className="text-2xl font-bold text-white mb-4">🏛️ Contexto del Cliente</h2>
+                <p className="text-white/60 mb-8">{project.context}</p>
+              </>
+            )}
 
-            <h2 className="text-2xl font-bold text-white mb-4">Nuestra Solución</h2>
-            <p className="text-white/60 mb-8">{project.solution}</p>
+            {project.objective && (
+              <>
+                <h2 className="text-2xl font-bold text-white mb-4">🎯 Objetivo General</h2>
+                <p className="text-white/60 mb-8">{project.objective}</p>
+              </>
+            )}
+
+            {project.challenge && (
+              <>
+              <h2 className="text-2xl font-bold text-white mb-4">El Desafío</h2>
+              <p className="text-white/60 mb-8">{project.challenge}</p>
+              </>
+            )}
+
+            {project.solution && (
+              <>
+                <h2 className="text-2xl font-bold text-white mb-4">Nuestra Solución</h2>
+                <p className="text-white/60 mb-8">{project.solution}</p>
+              </>
+            )}
+
+            {project.scope && (
+              <>
+                <h2 className="text-2xl font-bold text-white mb-4">⚙️ Alcance del Proyecto</h2>
+                <div className="space-y-6 mb-8">
+                  {project.scope.infrastructure && (
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-3">1. Infraestructura y Tecnología</h3>
+                      <ul className="list-disc pl-5 text-white/60 space-y-2">
+                        {project.scope.infrastructure.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {project.scope.automation && (
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-3">2. Automatización y CRM</h3>
+                      <ul className="list-disc pl-5 text-white/60 space-y-2">
+                        {project.scope.automation.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {project.scope.marketing && (
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-3">3. Marketing y Comunicación Digital</h3>
+                      <ul className="list-disc pl-5 text-white/60 space-y-2">
+                        {project.scope.marketing.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                      {project.visualStyleImage && (
+                        <div className="mt-6">
+                          <h4 className="text-lg font-semibold text-white mb-3">Estilo Visual Implementado</h4>
+                          <div className="relative w-full overflow-hidden rounded-xl">
+                            <Image 
+                              src={project.visualStyleImage} 
+                              alt="Estilo visual implementado" 
+                              width={1200}
+                              height={630}
+                              className="w-full h-auto"
+                              priority
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  {project.scope.consulting && (
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-3">4. Consultoría Estratégica y Coordinación</h3>
+                      <ul className="list-disc pl-5 text-white/60 space-y-2">
+                        {project.scope.consulting.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
+
+            {project.team && (
+              <>
+                <h2 className="text-2xl font-bold text-white mb-4">👥 Roles Clave</h2>
+                <div className="space-y-4 mb-8">
+                  {project.team.generalManager && (
+                    <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
+                      <p className="text-white/60">{project.team.generalManager}</p>
+                    </div>
+                  )}
+                  {project.team.marketingDirector && (
+                    <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
+                      <p className="text-white/60">{project.team.marketingDirector}</p>
+                    </div>
+                  )}
+                  {project.team.techLead && (
+                    <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
+                      <p className="text-white/60">{project.team.techLead}</p>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
 
             <h2 className="text-2xl font-bold text-white mb-4">Resultados</h2>
             <ul className="list-disc pl-5 text-white/60 mb-8 space-y-2">
@@ -119,6 +201,34 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                 </span>
               ))}
             </div>
+
+            {project.projectLinks && (
+              <>
+                <h2 className="text-2xl font-bold text-white mb-4">🔗 Proyectos Desarrollados</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                  {project.projectLinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group p-4 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-all duration-300"
+                    >
+                      <h3 className="text-lg font-semibold text-white group-hover:text-primary-300 transition-colors mb-2">
+                        {link.name}
+                      </h3>
+                      <p className="text-white/60 text-sm mb-3">{link.description}</p>
+                      <div className="flex items-center text-primary-300 text-sm">
+                        <span>Visitar proyecto</span>
+                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
 
           <ProjectCTA />

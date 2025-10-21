@@ -1,0 +1,22 @@
+{
+  "id": "adj-ingenieria",
+  "title": "ADJ Ingeniería – Web corporativa",
+  "description": "Landing page institucional para la constructora ADJ Ingeniería, con un diseño profesional orientado a mostrar sus servicios y proyectos.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "CORPORATE WEBSITE",
+  "client": "ADJ Ingeniería",
+  "year": "2023",
+  "challenge": "Posicionar la marca en buscadores mediante SEO y crear una vitrina digital para la generación de leads.",
+  "solution": "Desarrollamos una página web corporativa profesional optimizada para SEO, que sirve como vitrina digital efectiva para mostrar los servicios y proyectos de la constructora, facilitando la generación de leads.",
+  "results": [
+    "Página web corporativa profesional implementada",
+    "SEO optimizado con incremento del 200% en visibilidad orgánica",
+    "Sistema de generación de leads implementado",
+    "Vitrina digital efectiva para mostrar servicios y proyectos"
+  ],
+  "technologies": ["Next.js", "Tailwind CSS", "SEO Optimization", "Lead Generation", "CMS", "AWS"],
+  "date": "2023-08-01",
+  "demoUrl": "https://adjingenieria.com",
+  "githubUrl": null,
+  "developmentTime": "2 meses"
+}

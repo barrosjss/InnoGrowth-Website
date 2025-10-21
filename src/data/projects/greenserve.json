@@ -1,0 +1,23 @@
+{
+  "id": "greenserve",
+  "title": "GreenServe",
+  "description": "Plataforma web para gestión de servicios ecológicos y sostenibles para empresas.",
+  "image": "/placeholder.svg?height=400&width=400",
+  "category": "WEB PLATFORM",
+  "client": "GreenTech Solutions",
+  "year": "2023",
+  "challenge": "GreenTech Solutions buscaba crear un marketplace que conectara empresas con proveedores de servicios ecológicos verificados, facilitando la transición hacia operaciones más sostenibles.",
+  "solution": "Implementamos una plataforma web con sistema de verificación de proveedores, marketplace de servicios ecológicos, sistema de evaluación y métricas de impacto ambiental para cada servicio contratado.",
+  "results": [
+    "Más de 200 proveedores verificados en la plataforma",
+    "Reducción promedio del 25% en huella de carbono para empresas cliente",
+    "Incremento del 60% en contratación de servicios sostenibles",
+    "Ahorro promedio del 15% en costos operativos para empresas"
+  ],
+  "technologies": ["Next.js", "PostgreSQL", "Stripe", "Docker", "Google Cloud"],
+  "date": "2023-08-20",
+  "demoUrl": "https://greenserve.com",
+  "githubUrl": "https://github.com/greentech/greenserve",
+  "developmentTime": "6 meses",
+  "status": "Completado"
+}

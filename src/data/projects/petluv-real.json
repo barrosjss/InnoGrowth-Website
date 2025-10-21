@@ -1,0 +1,22 @@
+{
+  "id": "petluv-real",
+  "title": "PetLuv App – Comunidad digital para amantes de mascotas",
+  "description": "Plataforma digital que conecta a dueños de mascotas, permitiendo crear comunidades basadas en intereses compartidos y acceder a servicios especializados para el cuidado de sus animales.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "COMMUNITY PLATFORM",
+  "client": "PetLuv",
+  "year": "2020",
+  "challenge": "Construir una comunidad sólida en torno al amor por las mascotas, integrando funciones sociales y de servicios en una sola aplicación.",
+  "solution": "Desarrollamos una plataforma digital integral que conecta dueños de mascotas, creando comunidades basadas en intereses compartidos y proporcionando acceso a servicios especializados de cuidado animal.",
+  "results": [
+    "Plataforma digital para amantes de mascotas implementada exitosamente",
+    "Comunidades basadas en intereses compartidos creadas",
+    "Acceso a servicios especializados de cuidado animal integrado",
+    "Funciones sociales y de servicios combinadas en una sola aplicación"
+  ],
+  "technologies": ["React Native", "Node.js", "MongoDB", "Social Features", "Service Integration", "AWS"],
+  "date": "2020-06-01",
+  "demoUrl": "https://petluv-real.com",
+  "githubUrl": null,
+  "developmentTime": "18 meses"
+}

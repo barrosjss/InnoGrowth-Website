@@ -1,0 +1,22 @@
+{
+  "id": "rabbit-delivery",
+  "title": "Rabbit Delivery – Solución logística para pymes",
+  "description": "Aplicación enfocada en apoyar a pequeñas y medianas empresas en la gestión de sus procesos logísticos fuera de la oficina.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "LOGISTICS APP",
+  "client": "Rabbit Delivery",
+  "year": "2021",
+  "challenge": "Desarrollar una app intuitiva para gestionar envíos y recepción de documentos, con trazabilidad completa de los procesos logísticos externos.",
+  "solution": "Creamos una aplicación móvil intuitiva que permite a las pymes gestionar eficientemente sus procesos logísticos externos, con trazabilidad completa y control en tiempo real.",
+  "results": [
+    "Aplicación logística intuitiva para pymes implementada",
+    "Trazabilidad completa de procesos logísticos externos",
+    "Gestión eficiente de envíos y recepción de documentos",
+    "Control en tiempo real de procesos logísticos"
+  ],
+  "technologies": ["React Native", "Node.js", "MongoDB", "GPS Tracking", "Real-time Updates", "AWS"],
+  "date": "2021-06-01",
+  "demoUrl": "https://rabbit-delivery.com",
+  "githubUrl": null,
+  "developmentTime": "1 mes (MVP)"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "living-over",
+  "title": "Living Over – Plataforma de reservas de lujo",
+  "description": "Desarrollo de una plataforma web completa para una agencia de viajes y arrendamiento de lujo. La solución permite listar apartamentos, cabañas, mansiones, yates, jetskis y propiedades exclusivas, integrando formularios de reserva y cotización online.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "LUXURY PLATFORM",
+  "client": "Living Over",
+  "year": "2022",
+  "challenge": "Diseñar una interfaz premium que transmitiera el nivel de exclusividad de la marca, asegurando a la vez funcionalidad en la gestión de reservas y una experiencia de usuario intuitiva.",
+  "solution": "Creamos una plataforma de lujo completa que combina diseño premium con funcionalidad avanzada de reservas, transmitiendo exclusividad mientras mantiene una experiencia de usuario intuitiva.",
+  "results": [
+    "Plataforma de lujo con interfaz premium implementada",
+    "Sistema de reservas y cotización online funcional",
+    "Listado completo de propiedades exclusivas (apartamentos, yates, mansiones)",
+    "Experiencia de usuario intuitiva mantenida en entorno de lujo"
+  ],
+  "technologies": ["Next.js", "Node.js", "PostgreSQL", "Payment Gateway", "Luxury Design", "AWS"],
+  "date": "2022-09-01",
+  "demoUrl": "https://livingover.com",
+  "githubUrl": null,
+  "developmentTime": "3 meses de construcción + 1 año de soporte y mantenimiento"
+}

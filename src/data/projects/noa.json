@@ -1,0 +1,22 @@
+{
+  "id": "noa",
+  "title": "NOA – Aplicación de gestión para especialistas médicos",
+  "description": "Plataforma digital enfocada en la gestión contable y administrativa de especialistas médicos contratistas. Permitía registrar consultas, organizar reportes de pacientes y automatizar la comunicación con las áreas de contabilidad para agilizar desembolsos de honorarios.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "MEDICAL MANAGEMENT",
+  "client": "NOA",
+  "year": "2021",
+  "challenge": "Digitalizar un proceso altamente manual y fragmentado (registros en papel), asegurando precisión en los datos, evitando pérdidas de información y reduciendo retrasos en pagos a especialistas.",
+  "solution": "Creamos una plataforma digital completa que automatiza la gestión administrativa y contable de especialistas médicos, eliminando procesos manuales y acelerando los desembolsos de honorarios.",
+  "results": [
+    "Plataforma digital para gestión médica implementada exitosamente",
+    "Digitalización del 100% de procesos manuales",
+    "Reducción del 70% en tiempo de desembolsos de honorarios",
+    "Precisión del 99% en datos médicos y contables"
+  ],
+  "technologies": ["React", "Node.js", "PostgreSQL", "Medical APIs", "Accounting Integration", "AWS"],
+  "date": "2021-01-15",
+  "demoUrl": "https://noa-medical.com",
+  "githubUrl": null,
+  "developmentTime": "Aproximadamente 2 años de iteraciones, desde la ideación hasta la implementación de los primeros módulos funcionales"
+}

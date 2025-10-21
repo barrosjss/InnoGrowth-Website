@@ -1,0 +1,22 @@
+{
+  "id": "cloudtask",
+  "title": "CloudTask – Plataforma web B2B",
+  "description": "Aplicación 100% web desarrollada para optimizar procesos de negocio en entornos B2B. Funciona como un marketplace especializado donde empresas pueden conectar con proveedores de servicios, software y talento.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "B2B MARKETPLACE",
+  "client": "CloudTask",
+  "year": "2023",
+  "challenge": "Construir una plataforma escalable y segura que integrara múltiples categorías de soluciones (desde generación de leads hasta CRM y soporte al cliente), asegurando una experiencia de usuario intuitiva y funcionalidades avanzadas de filtrado y búsqueda.",
+  "solution": "Desarrollamos una plataforma B2B completa que conecta empresas con proveedores especializados, ofreciendo herramientas avanzadas de filtrado, búsqueda y gestión de proyectos en un entorno seguro y escalable.",
+  "results": [
+    "Plataforma B2B con 500+ empresas registradas",
+    "Integración de 10+ categorías de servicios especializados",
+    "Sistema de filtrado avanzado implementado",
+    "Experiencia de usuario optimizada para entornos B2B"
+  ],
+  "technologies": ["Next.js", "Node.js", "PostgreSQL", "Elasticsearch", "AWS", "Docker"],
+  "date": "2023-06-01",
+  "demoUrl": "https://cloudtask.com",
+  "githubUrl": null,
+  "developmentTime": "6 Meses MVP. Soporte y actualizaciones hasta la actualidad"
+}

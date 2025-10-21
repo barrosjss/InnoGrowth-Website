@@ -1,0 +1,22 @@
+{
+  "id": "innologix",
+  "title": "InnoLogix – Plataforma inmersiva de realidad virtual",
+  "description": "Proyecto académico-empresarial con la Universidad Libre: simulador VR para logística y operaciones industriales, integrando experiencias inmersivas en gafas de realidad aumentada.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "VR/AR PLATFORM",
+  "client": "Universidad Libre",
+  "year": "2024",
+  "challenge": "Desarrollar simulaciones realistas de bodegas, maquinaria de carga y procesos de logística con storytelling técnico y escenarios inmersivos.",
+  "solution": "Creamos un simulador VR completo que permite a los usuarios experimentar de forma inmersiva los procesos logísticos industriales, con escenarios realistas y narrativas educativas.",
+  "results": [
+    "Simulador VR funcional con 10+ escenarios industriales",
+    "Integración exitosa con gafas de realidad aumentada",
+    "Storytelling técnico implementado para educación",
+    "Proyecto académico-empresarial exitoso con Universidad Libre"
+  ],
+  "technologies": ["Unity", "C#", "VR SDK", "AR Integration", "3D Modeling", "Storytelling"],
+  "date": "2024-06-01",
+  "demoUrl": null,
+  "githubUrl": null,
+  "developmentTime": "8 meses"
+}

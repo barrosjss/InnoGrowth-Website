@@ -1,0 +1,90 @@
+{
+  "id": "cie-barcelona",
+  "title": "Transformación Digital Integral – CIE Barcelona",
+  "description": "Ecosistema digital unificado para la Cámara de Empresarios de Barcelona que integra gestión interna, automatización de procesos y conexión con la comunidad empresarial internacional.",
+  "image": "/projects/CIE-Barcelona/CIE-Barcelona.png",
+  "category": "DIGITAL TRANSFORMATION",
+  "client": "Cámara de Empresarios de Barcelona",
+  "location": "Barcelona, España",
+  "developmentTime": "Desde diciembre de 2024 – En curso",
+  "context": "CIE Barcelona es una cámara empresarial que agrupa emprendedores, directivos y pymes de diversos sectores en Europa y Latinoamérica. A finales de 2024, la institución decidió modernizar su ecosistema digital para optimizar su gestión interna, automatizar procesos y fortalecer la conexión con su comunidad empresarial internacional.",
+  "objective": "Consolidar la transformación digital de la Cámara mediante la implementación de herramientas tecnológicas integradas, la automatización de procesos comerciales y una estrategia digital unificada que optimice su operación, comunicación y posicionamiento institucional.",
+  "scope": {
+    "infrastructure": [
+      "Administración completa del ecosistema digital (sitios web, correos, servidores y dominios)",
+      "Desarrollo y mantenimiento de nuevas páginas y módulos internos según los requerimientos de la Cámara",
+      "Integración con herramientas de terceros para CRM, automatización, email marketing y analítica",
+      "Implementación de tecnologías modernas como WordPress, Next.js, Tailwind CSS, HTML5 y Supabase para lograr una infraestructura eficiente, escalable y segura"
+    ],
+    "automation": [
+      "Implementación y configuración avanzada de Clientify CRM",
+      "Integración de líneas de WhatsApp Business para admisiones y atención",
+      "Automatización de flujos de comunicación, seguimiento de prospectos y segmentación de audiencias",
+      "Creación de embudos de conversión y campañas de remarketing automatizadas"
+    ],
+    "marketing": [
+      "Administración y gestión de redes sociales oficiales",
+      "Rediseño completo de la línea gráfica institucional y creación de una nueva identidad visual para redes y plataformas digitales",
+      "Producción de contenido audiovisual estratégico para visibilidad de marca y promoción de eventos",
+      "Implementación de un nuevo lenguaje visual y diseño de interfaces (UI) aplicadas a redes, sitio web y piezas institucionales, desarrolladas en Figma, Adobe Creative Suite y CapCut",
+      "Optimización de la pauta digital (Meta Ads) con control de inversión y monitoreo de métricas clave"
+    ],
+    "consulting": [
+      "Asesoría técnica continua en procesos de integración tecnológica y marketing",
+      "Diagnóstico de las campañas publicitarias y reestructuración de embudos de ventas",
+      "Coordinación directa con los representantes de CIE para la toma de decisiones digitales",
+      "Reuniones de soporte técnico y validación de flujos para garantizar el correcto funcionamiento del ecosistema"
+    ]
+  },
+  "results": [
+    "Transformación digital completa de la Cámara de Empresarios de Barcelona",
+    "Automatización de procesos clave de gestión y comunicación",
+    "Mejora significativa en la experiencia del usuario y socios",
+    "Estrategia digital unificada y escalable implementada",
+    "Integración exitosa de herramientas CRM y automatización",
+    "Nueva identidad visual institucional desarrollada",
+    "Optimización de campañas digitales y métricas de rendimiento"
+  ],
+  "technologies": [
+    "WordPress",
+    "Next.js",
+    "Tailwind CSS",
+    "HTML5",
+    "Supabase",
+    "Clientify CRM",
+    "WhatsApp Business API",
+    "Meta Ads",
+    "Figma",
+    "Adobe Creative Suite",
+    "CapCut",
+    "Email Marketing Tools"
+  ],
+  "team": {
+    "generalManager": "Jesús Barros – Director General del Proyecto y enlace estratégico con CIE Barcelona",
+    "marketingDirector": "Danna Díaz – Directora de Marketing, responsable de estrategia, diseño de campañas y línea visual",
+    "techLead": "Michael Donado – Líder Técnico, encargado de la integración de sistemas, desarrollo web y mantenimiento tecnológico"
+  },
+  "responsibilities": "InnoGrowth asumió la responsabilidad de la gestión integral del ecosistema digital de CIE Barcelona, cubriendo infraestructura, automatización, marketing y consultoría estratégica.",
+  "date": "2024-12-01",
+  "demoUrl": "https://ciebarcelona.com",
+  "githubUrl": null,
+  "status": "En desarrollo activo",
+  "projectLinks": [
+    {
+      "name": "Web de CIE Barcelona",
+      "url": "https://ciebarcelona.com/",
+      "description": "Sitio web principal de la Cámara de Empresarios de Barcelona"
+    },
+    {
+      "name": "Web de Coaching Comercial",
+      "url": "https://coachingcomercial.org/",
+      "description": "Plataforma especializada en coaching comercial"
+    },
+    {
+      "name": "Plataforma de Test CIREXCO",
+      "url": "https://cirexco-platform.vercel.app/",
+      "description": "Plataforma para aplicación de tests certificados"
+    }
+  ],
+  "visualStyleImage": "/projects/CIE-Barcelona/Coaching-Comercial.png"
+}

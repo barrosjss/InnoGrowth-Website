@@ -172,18 +172,6 @@ export default function Footer() {
             <p className="text-white/40 text-sm">
               © {new Date().getFullYear()} InnoGrowth. Todos los derechos reservados.
             </p>
-            <span className="hidden md:inline text-white/20">|</span>
-            <p className="text-white/40 text-sm">
-              Desarrollado por{" "}
-              <a
-                href="https://www.coderlabs.co/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-300 hover:text-primary-400 transition-colors"
-              >
-                CoderLabs
-              </a>
-            </p>
           </div>
           <div className="flex gap-6">
             <Link href="/privacy" className="text-white/40 text-sm hover:text-primary-300 transition-colors">

@@ -1,0 +1,23 @@
+{
+  "id": "petluv-app",
+  "title": "PetLuv App",
+  "description": "Aplicación móvil para cuidado de mascotas con sistema de recordatorios y seguimiento de salud.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "MOBILE APP",
+  "client": "PetLuv Inc.",
+  "year": "2024",
+  "challenge": "PetLuv necesitaba una aplicación intuitiva que ayudara a los dueños de mascotas a mantener un seguimiento completo de la salud y cuidados de sus animales, con recordatorios personalizables y almacenamiento de registros médicos.",
+  "solution": "Desarrollamos una aplicación móvil multiplataforma con un sistema de recordatorios inteligentes, seguimiento de medicamentos, registro de vacunas, y almacenamiento de documentos médicos. La aplicación incluye integración con calendarios y notificaciones personalizables.",
+  "results": [
+    "Incremento del 45% en adherencia a tratamientos veterinarios",
+    "Reducción del 30% en citas perdidas",
+    "Satisfacción del usuario de 4.8/5 en tiendas de aplicaciones",
+    "Más de 50,000 descargas en los primeros 3 meses"
+  ],
+  "technologies": ["React Native", "Firebase", "Node.js", "MongoDB", "AWS"],
+  "date": "2024-01-15",
+  "demoUrl": "https://petluv.app",
+  "githubUrl": "https://github.com/petluv/app",
+  "developmentTime": "4 meses + mejoras continuas",
+  "status": "En desarrollo continuo"
+}

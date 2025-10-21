@@ -1,0 +1,23 @@
+{
+  "id": "neural-network-visualization",
+  "title": "Neural Network Visualization",
+  "description": "Herramienta interactiva para visualizar y comprender el funcionamiento de redes neuronales.",
+  "image": "/placeholder.svg?height=400&width=400",
+  "category": "DATA VISUALIZATION",
+  "client": "AI Research Lab",
+  "year": "2024",
+  "challenge": "AI Research Lab necesitaba una herramienta interactiva para visualizar redes neuronales complejas, permitiendo a investigadores y estudiantes comprender mejor el funcionamiento interno de modelos de machine learning.",
+  "solution": "Desarrollamos una aplicación web interactiva con visualización 3D de redes neuronales, animaciones de propagación de datos, análisis de capas, y herramientas de debugging para facilitar la comprensión y optimización de modelos.",
+  "results": [
+    "Mejora del 60% en comprensión de modelos complejos",
+    "Reducción del 40% en tiempo de debugging de redes neuronales",
+    "Incremento del 80% en adopción por parte de investigadores",
+    "Más de 1,000 modelos visualizados exitosamente"
+  ],
+  "technologies": ["D3.js", "WebGL", "TensorFlow.js", "React", "Python", "FastAPI"],
+  "date": "2024-02-28",
+  "demoUrl": "https://neural-viz.ai-research.com",
+  "githubUrl": "https://github.com/airesearch/neural-viz",
+  "developmentTime": "10 meses",
+  "status": "Completado"
+}

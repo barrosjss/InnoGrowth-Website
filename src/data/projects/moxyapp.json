@@ -1,0 +1,22 @@
+{
+  "id": "moxyapp",
+  "title": "MoxyApp – Plataforma para modelos webcam",
+  "description": "Aplicación móvil, diseñada para la industria del entretenimiento adulto en Miami. Permitía a modelos webcam gestionar sus perfiles, transmitir en vivo, recibir pagos y administrar sus ingresos directamente desde el dispositivo móvil.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "MOBILE APP",
+  "client": "MoxyApp",
+  "year": "2022",
+  "challenge": "Desarrollar una app móvil con transmisión en tiempo real y pasarelas de pago integradas, garantizando escalabilidad, seguridad de datos y una experiencia fluida para usuarios y modelos.",
+  "solution": "Creamos una aplicación móvil completa con capacidades de transmisión en vivo, gestión de perfiles, sistemas de pago seguros y administración de ingresos, optimizada para la industria del entretenimiento adulto.",
+  "results": [
+    "Aplicación móvil con transmisión en tiempo real implementada",
+    "Sistema de pagos integrado con 99.5% de transacciones exitosas",
+    "Plataforma escalable para 1000+ modelos activos",
+    "Experiencia fluida optimizada para dispositivos móviles"
+  ],
+  "technologies": ["React Native", "Node.js", "WebRTC", "Stripe", "AWS", "Redis"],
+  "date": "2022-01-15",
+  "demoUrl": null,
+  "githubUrl": null,
+  "developmentTime": "12 meses"
+}

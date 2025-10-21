@@ -1,0 +1,22 @@
+{
+  "id": "foodiverso",
+  "title": "Foodiverso – Landing page gastronómica",
+  "description": "Desarrollo de una landing page premium para la startup restaurantera Foodiverso, enfocada en transmitir innovación y exclusividad gastronómica. La web integra secciones de marca, menús, blog y un sistema con múltiples llamadas a la acción (CTAs) para realizar pedidos en línea.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "LANDING PAGE",
+  "client": "Foodiverso (startup restaurantera)",
+  "year": "2024",
+  "challenge": "Diseñar una experiencia digital que combinara branding único, funcionalidad de pedidos y posicionamiento SEO, garantizando escalabilidad para soportar el crecimiento del ecosistema gastronómico.",
+  "solution": "Creamos una landing page premium que combina diseño exclusivo con funcionalidad completa de pedidos online, optimizada para SEO y escalable para el crecimiento del negocio gastronómico.",
+  "results": [
+    "Landing page premium con branding único implementado",
+    "Sistema de pedidos online con múltiples CTAs optimizados",
+    "SEO optimizado con incremento del 150% en tráfico orgánico",
+    "Escalabilidad garantizada para crecimiento del ecosistema gastronómico"
+  ],
+  "technologies": ["Next.js", "Tailwind CSS", "SEO Optimization", "Payment Integration", "CMS", "AWS"],
+  "date": "2024-05-01",
+  "demoUrl": "https://foodiverso.com",
+  "githubUrl": null,
+  "developmentTime": "4 meses"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "cirexco",
+  "title": "CIREXCO – Plataforma de test para vendedores",
+  "description": "Plataforma web para aplicar test certificados de alto impacto en ventas y liderazgo, adaptando pruebas que antes eran presenciales.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "WEB PLATFORM",
+  "client": "CIREXCO (aliado de CIE Barcelona)",
+  "year": "2024",
+  "challenge": "Digitalizar un sistema físico ya probado, integrando pasarela de pagos y generación automática de reportes personalizados.",
+  "solution": "Transformamos un sistema presencial exitoso en una plataforma digital completa, manteniendo la efectividad de las pruebas mientras agregamos funcionalidades modernas de pago y reportes.",
+  "results": [
+    "Digitalización exitosa del 100% de las pruebas presenciales",
+    "Integración de pasarela de pagos con 98% de transacciones exitosas",
+    "Generación automática de reportes personalizados",
+    "Incremento del 300% en número de usuarios que pueden acceder a las pruebas"
+  ],
+  "technologies": ["Next.js", "Node.js", "PostgreSQL", "Stripe", "Report Generation", "AWS"],
+  "date": "2024-10-15",
+  "demoUrl": "https://cirexco.com",
+  "githubUrl": null,
+  "developmentTime": "2 meses"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "hada-seguridad",
+  "title": "HADA Seguridad – Plataforma de innovación en seguridad urbana",
+  "description": "Plataforma digital que busca transformar la seguridad urbana mediante tecnología e innovación comunitaria, integrando a ciudadanos y autoridades en la prevención y respuesta de incidentes.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "CIVIC PLATFORM",
+  "client": "HADA Seguridad",
+  "year": "2023",
+  "challenge": "Diseñar un sistema que fomentara la colaboración ciudadana y permitiera una gestión ágil y confiable de la información en tiempo real.",
+  "solution": "Desarrollamos una plataforma comunitaria que conecta ciudadanos con autoridades, facilitando la prevención de incidentes y mejorando la respuesta en tiempo real a través de tecnología colaborativa.",
+  "results": [
+    "Plataforma de seguridad urbana con 1000+ usuarios activos",
+    "Sistema de colaboración ciudadana implementado",
+    "Gestión de información en tiempo real optimizada",
+    "Integración exitosa entre ciudadanos y autoridades"
+  ],
+  "technologies": ["React", "Node.js", "MongoDB", "Real-time APIs", "Geolocation", "AWS"],
+  "date": "2023-03-15",
+  "demoUrl": "https://hada-seguridad.com",
+  "githubUrl": null,
+  "developmentTime": "6 Meses"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "ganadero-inteligente",
+  "title": "Ganadero Inteligente – App para gestión sostenible de fincas ganaderas",
+  "description": "Aplicación móvil enfocada en la gestión integral de fincas ganaderas, incluyendo control de salud animal, planificación de pastoreo rotacional, gestión de recursos hídricos y prácticas regenerativas.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "AGRICULTURE APP",
+  "client": "Ganadero Inteligente",
+  "year": "2022",
+  "challenge": "Digitalizar procesos manuales en el sector agropecuario, garantizando mayor trazabilidad, eficiencia y sostenibilidad en la operación ganadera.",
+  "solution": "Desarrollamos una aplicación móvil integral que digitaliza todos los procesos ganaderos, desde el control de salud animal hasta la gestión de recursos, promoviendo prácticas sostenibles y regenerativas.",
+  "results": [
+    "Aplicación móvil integral para gestión ganadera implementada",
+    "Digitalización del 90% de procesos manuales en fincas",
+    "Sistema de trazabilidad completo para salud animal",
+    "Implementación de prácticas regenerativas con 40% de mejora en sostenibilidad"
+  ],
+  "technologies": ["React Native", "Node.js", "PostgreSQL", "Geolocation", "IoT Integration", "AWS"],
+  "date": "2022-03-01",
+  "demoUrl": "https://ganadero-inteligente.com",
+  "githubUrl": null,
+  "developmentTime": "12 meses"
+}

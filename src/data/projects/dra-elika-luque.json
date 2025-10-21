@@ -1,0 +1,22 @@
+{
+  "id": "dra-elika-luque",
+  "title": "Web Dra. Elika Luque – Landing page profesional con calculadora IMC",
+  "description": "Desarrollo de una landing page de lujo para la Dra. Elika Luque, con un diseño 100% único y branding personalizado. Incluyó la integración de una calculadora de Índice de Masa Corporal (IMC) y se optimizó para generar confianza en pacientes y reforzar su imagen profesional.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "MEDICAL WEBSITE",
+  "client": "Dra. Elika Luque",
+  "year": "2022",
+  "challenge": "Crear una interfaz premium que transmitiera profesionalismo y exclusividad, integrando además una herramienta de salud funcional y aplicando estrategias de SEO para mejorar el posicionamiento en buscadores.",
+  "solution": "Desarrollamos una landing page médica premium con diseño único, integrando una calculadora de IMC funcional y optimizando para SEO, creando una experiencia que transmite profesionalismo y genera confianza en pacientes.",
+  "results": [
+    "Landing page médica premium con diseño 100% único",
+    "Calculadora de IMC funcional integrada exitosamente",
+    "SEO optimizado con incremento del 180% en tráfico orgánico",
+    "Imagen profesional reforzada con incremento del 60% en consultas"
+  ],
+  "technologies": ["Next.js", "Tailwind CSS", "Health Calculator", "SEO Optimization", "Medical Design", "AWS"],
+  "date": "2022-04-01",
+  "demoUrl": "https://draelikaluque.com",
+  "githubUrl": null,
+  "developmentTime": "2 meses"
+}

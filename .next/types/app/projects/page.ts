@@ -1,4 +1,4 @@
-// File: C:\Users\Leonardo Meza\Documents\Dev\InnoGrowth-Website\src\app\projects\page.tsx
+// File: /Users/jesusbarros/Documents/GitHub/InnoGrowth-Website/src/app/projects/page.tsx
 import * as entry from '../../../../src/app/projects/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

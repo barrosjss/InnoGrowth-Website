@@ -1,0 +1,22 @@
+{
+  "id": "grupit",
+  "title": "Grupit – Plataforma de pedidos colaborativos",
+  "description": "Plataforma multicanal (aplicación móvil, aplicación web y landing page informativa) para gestión de pedidos grupales en restaurantes. Los usuarios pueden unirse a un pedido abierto dentro de su empresa o conjunto residencial, reduciendo costos de entrega y obteniendo beneficios como cashback para futuros pedidos.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "MOBILE APP",
+  "client": "Grupit",
+  "year": "2024",
+  "challenge": "Diseñar una experiencia simple, confiable y escalable que conectara clientes, restaurantes y repartidores en un ecosistema único, garantizando eficiencia operativa y transparencia en el proceso de compra colaborativa.",
+  "solution": "Desarrollamos una plataforma multicanal completa que facilita los pedidos colaborativos, conectando usuarios, restaurantes y repartidores en un ecosistema transparente y eficiente.",
+  "results": [
+    "Plataforma multicanal (móvil, web, landing) implementada exitosamente",
+    "Sistema de pedidos colaborativos con 500+ grupos activos",
+    "Reducción del 40% en costos de entrega para usuarios",
+    "Sistema de cashback implementado con 80% de retención de usuarios"
+  ],
+  "technologies": ["React Native", "Next.js", "Node.js", "PostgreSQL", "Payment Gateway", "AWS"],
+  "date": "2024-01-01",
+  "demoUrl": "https://grupit.com",
+  "githubUrl": null,
+  "developmentTime": "1 año (desde la ideación hasta el despliegue de la versión funcional)"
+}

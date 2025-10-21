@@ -1,0 +1,23 @@
+{
+  "id": "cycle-rental-app",
+  "title": "Cycle Rental App",
+  "description": "Aplicación para alquiler de bicicletas con sistema de pago integrado y localización GPS.",
+  "image": "/placeholder.svg?height=400&width=400",
+  "category": "MOBILE APP",
+  "client": "Urban Mobility",
+  "year": "2024",
+  "challenge": "Urban Mobility buscaba crear una aplicación que facilitara el alquiler de bicicletas en la ciudad, con sistema de pago seguro, localización GPS en tiempo real y gestión de flotas.",
+  "solution": "Desarrollamos una aplicación móvil con sistema de geolocalización, pagos integrados, gestión de flotas de bicicletas, y sistema de reservas con notificaciones push para una experiencia de usuario fluida.",
+  "results": [
+    "Incremento del 80% en uso de bicicletas compartidas",
+    "Reducción del 25% en tiempo de reserva y pago",
+    "Mejora del 90% en precisión de localización de bicicletas",
+    "Más de 100,000 usuarios activos en 6 meses"
+  ],
+  "technologies": ["React Native", "Node.js", "MongoDB", "Stripe", "Google Maps API", "Firebase"],
+  "date": "2024-03-12",
+  "demoUrl": "https://cycle-rental.app",
+  "githubUrl": "https://github.com/urbanmobility/cycle-app",
+  "developmentTime": "8 meses",
+  "status": "Completado"
+}

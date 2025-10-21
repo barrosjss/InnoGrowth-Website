@@ -1,69 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import { LucideArrowLeft } from "lucide-react"
+import { getAllProjects } from "@/lib/projects"
 
-interface Project {
-  id: string
-  title: string
-  description: string
-  image: string
-  category: string
-  client: string
-}
-
-// En una aplicación real, estos datos vendrían de una API o CMS
-const projects: Project[] = [
-  {
-    id: "petluv-app",
-    title: "PetLuv App",
-    description: "Aplicación móvil para cuidado de mascotas con sistema de recordatorios y seguimiento de salud.",
-    image: "/placeholder.svg?height=600&width=600",
-    category: "MOBILE APP",
-    client: "PetLuv Inc.",
-  },
-  {
-    id: "greenserve",
-    title: "GreenServe",
-    description: "Plataforma web para gestión de servicios ecológicos y sostenibles para empresas.",
-    image: "/placeholder.svg?height=400&width=400",
-    category: "WEB PLATFORM",
-    client: "GreenTech Solutions",
-  },
-  {
-    id: "research-bug-database",
-    title: "Research & Bug Database",
-    description: "Sistema centralizado para seguimiento y gestión de incidencias en desarrollo de software.",
-    image: "/placeholder.svg?height=300&width=600",
-    category: "DASHBOARD",
-    client: "DevSecOps Inc.",
-  },
-  {
-    id: "cycle-rental-app",
-    title: "Cycle Rental App",
-    description: "Aplicación para alquiler de bicicletas con sistema de pago integrado y localización GPS.",
-    image: "/placeholder.svg?height=400&width=400",
-    category: "MOBILE APP",
-    client: "Urban Mobility",
-  },
-  {
-    id: "architectural-visualization",
-    title: "Architectural Visualization",
-    description: "Visualización 3D de proyectos arquitectónicos con realidad aumentada para clientes.",
-    image: "/placeholder.svg?height=400&width=400",
-    category: "3D VISUALIZATION",
-    client: "ArchModern Studios",
-  },
-  {
-    id: "neural-network-visualization",
-    title: "Neural Network Visualization",
-    description: "Herramienta interactiva para visualizar y comprender el funcionamiento de redes neuronales.",
-    image: "/placeholder.svg?height=400&width=400",
-    category: "DATA VISUALIZATION",
-    client: "AI Research Lab",
-  },
-]
-
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await getAllProjects()
   return (
     <div className="bg-[#030303] min-h-screen">
       <div className="relative pt-24 pb-16 overflow-hidden">

@@ -1,0 +1,22 @@
+{
+  "id": "komplit",
+  "title": "Komplit – E-commerce para coleccionistas",
+  "description": "Plataforma de comercio electrónico de nicho orientada a coleccionistas. Permitía a los usuarios registrar sus colecciones, identificar ítems faltantes y conectar automáticamente con un Marketplace para adquirirlos.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "E-COMMERCE",
+  "client": "Komplit",
+  "year": "2022",
+  "challenge": "Desarrollar un sistema de seguimiento automatizado que integrara inventarios de usuarios con ofertas en el mercado, asegurando precisión en recomendaciones y escalabilidad en la gestión de datos.",
+  "solution": "Creamos una plataforma especializada que automatiza el proceso de completar colecciones, conectando inteligentemente a coleccionistas con vendedores y proporcionando recomendaciones precisas.",
+  "results": [
+    "Sistema de seguimiento automatizado implementado exitosamente",
+    "Integración de inventarios de usuarios con marketplace",
+    "Precisión del 95% en recomendaciones de ítems faltantes",
+    "Plataforma escalable para gestión de grandes volúmenes de datos"
+  ],
+  "technologies": ["React", "Node.js", "MongoDB", "AI/ML", "Payment Gateway", "AWS"],
+  "date": "2022-06-01",
+  "demoUrl": "https://komplit.com",
+  "githubUrl": null,
+  "developmentTime": "Aproximadamente 5 meses, desde la ideación hasta el despliegue inicial"
+}

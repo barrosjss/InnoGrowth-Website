@@ -1,0 +1,22 @@
+{
+  "id": "offerapp",
+  "title": "OfferApp.co",
+  "description": "Red social de ofertas donde usuarios descubren y comparten descuentos de sus tiendas favoritas en una sola comunidad.",
+  "image": "/placeholder.svg?height=600&width=600",
+  "category": "SOCIAL NETWORK",
+  "client": "OfferApp",
+  "year": "2015",
+  "challenge": "Crear una experiencia atractiva y social que conecte a usuarios y comercios, facilitando el acceso a las mejores ofertas.",
+  "solution": "Desarrollamos una red social innovadora que conecta usuarios y comercios, facilitando el descubrimiento y compartición de ofertas en una comunidad unificada.",
+  "results": [
+    "Red social de ofertas implementada exitosamente",
+    "Conexión efectiva entre usuarios y comercios establecida",
+    "Facilitación del acceso a las mejores ofertas",
+    "Experiencia atractiva y social creada"
+  ],
+  "technologies": ["PHP", "MySQL", "JavaScript", "Social Features", "E-commerce Integration", "Web Technologies"],
+  "date": "2015-01-01",
+  "demoUrl": "https://offerapp.co",
+  "githubUrl": null,
+  "developmentTime": "3 años"
+}
