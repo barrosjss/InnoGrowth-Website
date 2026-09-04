@@ -39,9 +39,22 @@ function whatsappUrl(content: CtaContent) {
 }
 
 export const metadata: Metadata = {
-  title: "AI Power Worker Pro — Curso de IA para productividad | InnoGrowth",
+  title: "AI Power Worker Pro | Curso de IA para productividad | InnoGrowth",
   description:
-    "Aumente su productividad x5 con IA. Curso práctico de ChatGPT, Claude, Gemini, Microsoft Copilot y Google AI Studio. 3 domingos, $200.000 COP. Cupos limitados.",
+    "Curso práctico de IA (ChatGPT, Claude, Gemini, Copilot y Google AI Studio) para multiplicar su productividad laboral. 3 domingos, $200.000 COP. Cupos limitados.",
+  keywords: [
+    "curso de inteligencia artificial",
+    "IA para productividad",
+    "curso ChatGPT",
+    "curso Claude IA",
+    "curso Gemini",
+    "Microsoft Copilot curso",
+    "AI Power Worker Pro",
+    "InnoGrowth",
+  ],
+  alternates: {
+    canonical: "https://www.innogrowth.co/cursos/ai-power-worker-pro",
+  },
   openGraph: {
     title: "AI Power Worker Pro — Curso de IA para productividad",
     description:
@@ -49,6 +62,12 @@ export const metadata: Metadata = {
     url: "https://www.innogrowth.co/cursos/ai-power-worker-pro",
     siteName: "InnoGrowth",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Power Worker Pro — Curso de IA para productividad",
+    description:
+      "Domine las mejores herramientas de IA en 3 domingos. Certificado, plantillas y biblioteca de 50 prompts incluidos.",
   },
 };
 
