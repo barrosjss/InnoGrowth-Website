@@ -137,9 +137,122 @@ const faqs = [
   },
 ];
 
+const PAGE_URL = "https://www.innogrowth.co/cursos/ai-power-worker-pro";
+const SITE_URL = "https://www.innogrowth.co";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "InnoGrowth",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.svg`,
+  sameAs: ["https://www.instagram.com/innogrowthcon/"],
+  areaServed: {
+    "@type": "Country",
+    name: "Colombia",
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Luis Carlos Acosta Fontalvo",
+  jobTitle: "Instructor de IA para productividad",
+  worksFor: {
+    "@type": "Organization",
+    name: "InnoGrowth",
+    url: SITE_URL,
+  },
+};
+
+const courseJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: "AI Power Worker Pro",
+  description:
+    "Curso práctico de IA (ChatGPT, Claude, Gemini, Microsoft Copilot y Google AI Studio) para multiplicar la productividad laboral. 3 domingos, de 8:00 a.m. a 12:00 p.m.",
+  provider: {
+    "@type": "Organization",
+    name: "InnoGrowth",
+    url: SITE_URL,
+  },
+  instructor: {
+    "@type": "Person",
+    name: "Luis Carlos Acosta Fontalvo",
+  },
+  inLanguage: "es",
+  isAccessibleForFree: false,
+  offers: {
+    "@type": "Offer",
+    price: "200000",
+    priceCurrency: "COP",
+    availability: "https://schema.org/InStock",
+    url: PAGE_URL,
+    category: "Curso",
+  },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Cursos",
+      item: SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "AI Power Worker Pro",
+      item: PAGE_URL,
+    },
+  ],
+};
+
 export default function AIPowerWorkerProPage() {
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative py-16 md:py-28 overflow-hidden bg-gradient-to-b from-primary/10 to-background">
         <div className="container mx-auto px-4">
