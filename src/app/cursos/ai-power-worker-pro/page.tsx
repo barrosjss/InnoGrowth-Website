@@ -21,6 +21,7 @@ import {
   Users,
   Award,
   GraduationCap,
+  ChevronRight,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -253,6 +254,24 @@ export default function AIPowerWorkerProPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {/* Breadcrumb visible */}
+      <nav aria-label="Breadcrumb" className="container mx-auto px-4 pt-6">
+        <ol className="flex items-center flex-wrap gap-1 text-sm text-muted-foreground">
+          <li className="flex items-center gap-1">
+            <Link href="/" className="hover:text-primary transition-colors">
+              Inicio
+            </Link>
+            <ChevronRight className="h-3.5 w-3.5" />
+          </li>
+          <li className="flex items-center gap-1">
+            <span>Cursos</span>
+            <ChevronRight className="h-3.5 w-3.5" />
+          </li>
+          <li aria-current="page" className="text-foreground font-medium">
+            AI Power Worker Pro
+          </li>
+        </ol>
+      </nav>
       {/* Hero */}
       <section className="relative py-16 md:py-28 overflow-hidden bg-gradient-to-b from-primary/10 to-background">
         <div className="container mx-auto px-4">
