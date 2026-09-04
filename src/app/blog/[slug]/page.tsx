@@ -198,6 +198,78 @@ const blogPosts = {
     readTime: "10 min",
     tags: ["Transformación Digital", "Estrategia", "Innovación", "Tecnología"],
   },
+  "curso-ai-power-worker-pro": {
+    title: "Cómo la inteligencia artificial multiplica la productividad de su equipo",
+    excerpt:
+      "Qué herramientas de IA vale la pena aprender hoy, qué tareas puede delegarles su equipo y cómo AI Power Worker Pro lo lleva de cero a un uso práctico y profesional.",
+    content: `
+      <p>La inteligencia artificial generativa dejó de ser una novedad experimental para convertirse en una herramienta de trabajo diario. Redactar informes, preparar presentaciones, analizar datos o responder correos son tareas que hoy se pueden acelerar de forma significativa con las herramientas correctas y, sobre todo, sabiéndolas usar bien.</p>
+
+      <h2>Por qué la IA generativa ya no es opcional en el trabajo diario</h2>
+
+      <p>Cada vez más profesionales, sin importar su cargo o sector, usan IA para apoyar tareas que antes tomaban horas. El reto no es acceder a estas herramientas —la mayoría son gratuitas o de bajo costo—, sino saber aplicarlas de forma práctica y profesional a las tareas reales del día a día.</p>
+
+      <h2>Qué herramientas vale la pena aprender a usar</h2>
+
+      <p>No todas las herramientas de IA sirven para lo mismo. Las más usadas hoy en entornos profesionales son:</p>
+
+      <ul>
+        <li><strong>ChatGPT</strong>, para redacción, análisis y automatización de tareas.</li>
+        <li><strong>Claude</strong>, especialmente útil para trabajar con documentos largos y análisis detallado.</li>
+        <li><strong>Gemini</strong>, integrado con el ecosistema de Google Workspace.</li>
+        <li><strong>Microsoft Copilot</strong>, dentro de Word, Excel y Outlook.</li>
+        <li><strong>Google AI Studio</strong>, para quienes quieren ir un paso más allá.</li>
+      </ul>
+
+      <h2>Qué puede lograr con IA aplicada al trabajo</h2>
+
+      <p>Con las herramientas correctas y el enfoque adecuado, un profesional puede usar IA para:</p>
+
+      <ul>
+        <li>Crear informes y documentos profesionales en minutos</li>
+        <li>Analizar información y grandes volúmenes de datos</li>
+        <li>Preparar presentaciones rápidamente</li>
+        <li>Mejorar correos y comunicaciones</li>
+        <li>Investigar y sintetizar información</li>
+        <li>Escribir prompts profesionales que dan mejores resultados</li>
+        <li>Automatizar tareas repetitivas</li>
+        <li>Incorporar IA a los procesos de trabajo del equipo</li>
+      </ul>
+
+      <h2>Cómo AI Power Worker Pro lo lleva de la teoría a la práctica</h2>
+
+      <p>Por eso en InnoGrowth diseñamos <strong>AI Power Worker Pro</strong>, un curso práctico pensado para llevar a cualquier profesional de cero a un uso real y aplicado de la IA en su trabajo diario, sin necesidad de conocimientos técnicos previos.</p>
+
+      <p>El curso se dicta en 3 domingos consecutivos, de 8:00 a.m. a 12:00 p.m., e incluye:</p>
+
+      <ul>
+        <li>Biblioteca de 50 prompts profesionales</li>
+        <li>Plantillas listas para usar</li>
+        <li>Casos empresariales reales</li>
+        <li>Guías prácticas paso a paso</li>
+        <li>Certificado de participación</li>
+      </ul>
+
+      <h2>Para quién es (y para quién no)</h2>
+
+      <p>Está pensado para profesionales, ingenieros, administradores, docentes, estudiantes, emprendedores, analistas y empresarios que quieren aplicar IA en su trabajo, sin experiencia previa. No es un curso técnico de programación ni una certificación formal en IA: el foco está en la aplicación práctica y profesional de las herramientas, no en la teoría.</p>
+
+      <h2>Cómo inscribirse</h2>
+
+      <p>El valor del curso es de $200.000 COP e incluye todos los bonos mencionados. Los cupos son limitados por grupo.</p>
+
+      <p>
+        <a href="https://forms.gle/sBG1F2CK1yj6NwNs7?utm_source=blog&utm_medium=cta&utm_campaign=ai-power-worker-pro&utm_content=post" target="_blank" rel="noopener noreferrer"><strong>Inscríbase aquí en AI Power Worker Pro</strong></a>
+        o escriba "QUIERO IA" por WhatsApp al 300 498 6307 y le confirmamos el cupo.
+      </p>
+    `,
+    image: "/placeholder.svg?height=600&width=1200",
+    date: "31 Ago 2026",
+    author: "InnoGrowth",
+    category: "Inteligencia Artificial",
+    readTime: "6 min",
+    tags: ["Inteligencia Artificial", "Productividad", "IA Generativa", "Capacitación"],
+  },
   // Otros posts...
 }
 
