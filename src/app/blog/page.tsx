@@ -72,6 +72,16 @@ const blogPosts: BlogPost[] = [
     author: "Roberto García",
     category: "Experiencia del Cliente",
   },
+  {
+    id: "curso-ai-power-worker-pro",
+    title: "Cómo la inteligencia artificial multiplica la productividad de su equipo",
+    excerpt:
+      "Qué herramientas de IA vale la pena aprender hoy, qué tareas puede delegarles su equipo y cómo AI Power Worker Pro lo lleva de cero a un uso práctico y profesional.",
+    image: "/placeholder.svg?height=400&width=600",
+    date: "31 Ago 2026",
+    author: "InnoGrowth",
+    category: "Inteligencia Artificial",
+  },
 ]
 
 export default function BlogPage() {
