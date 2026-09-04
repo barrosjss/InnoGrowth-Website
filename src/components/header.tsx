@@ -31,6 +31,9 @@ export default function Header() {
             <Link href="/#proyectos" className="text-white/70 hover:text-white transition-colors">
               Proyectos
             </Link>
+            <Link href="/cursos/ai-power-worker-pro" className="text-white/70 hover:text-white transition-colors">
+              Cursos
+            </Link>
             <Link href="/#contacto" className="text-white/70 hover:text-white transition-colors">
               Contacto
             </Link>
@@ -86,6 +89,13 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Proyectos
+              </Link>
+              <Link
+                href="/cursos/ai-power-worker-pro"
+                className="text-white/70 hover:text-white transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Cursos
               </Link>
               <Link
                 href="/#contacto"
