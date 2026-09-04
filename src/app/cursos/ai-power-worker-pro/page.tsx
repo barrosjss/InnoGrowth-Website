@@ -136,6 +136,18 @@ const faqs = [
     q: "¿Cómo me inscribo?",
     a: "Puede inscribirse directamente por el formulario de inscripción o escribirnos por WhatsApp con el mensaje \"QUIERO IA\" y le confirmamos el cupo.",
   },
+  {
+    q: "¿Cuál es la modalidad del curso?",
+    a: "Se dicta en 3 domingos consecutivos. La modalidad (virtual o presencial), junto con el enlace o la sede según corresponda, se confirma al momento de inscribirse.",
+  },
+  {
+    q: "¿Para quién NO es este curso?",
+    a: "No está pensado para quienes ya dominan herramientas de IA generativa a nivel avanzado o buscan una certificación técnica formal (por ejemplo, en desarrollo o ingeniería de IA). Está diseñado para quienes parten de cero o de un uso básico y quieren aplicar la IA de forma práctica en su trabajo diario.",
+  },
+  {
+    q: "¿En qué se diferencia de los tutoriales gratuitos de YouTube?",
+    a: "A diferencia de un tutorial suelto, AI Power Worker Pro es un programa guiado en vivo con instructor, enfocado en casos de uso reales de trabajo, e incluye biblioteca de prompts, plantillas listas para usar, casos empresariales reales y certificado de participación, no solo teoría dispersa.",
+  },
 ];
 
 const PAGE_URL = "https://www.innogrowth.co/cursos/ai-power-worker-pro";
@@ -493,6 +505,24 @@ export default function AIPowerWorkerProPage() {
                 <p className="text-muted-foreground mt-3">{faq.a}</p>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recursos relacionados */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Recursos relacionados</h2>
+            <p className="text-muted-foreground mb-6">
+              Lea más sobre cómo aplicar IA en el trabajo diario en nuestro blog.
+            </p>
+            <Link
+              href="/blog/curso-ai-power-worker-pro"
+              className="inline-flex items-center justify-center rounded-md border-2 border-primary bg-transparent text-primary hover:bg-primary/10 h-11 px-8 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 gap-2"
+            >
+              Cómo la IA multiplica su productividad laboral <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
