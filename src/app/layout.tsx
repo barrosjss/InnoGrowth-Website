@@ -8,6 +8,7 @@ import AppointmentModal from "@/components/appointment-modal";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.innogrowth.co"),
   title: "InnoGrowth - Consultoría Estratégica para Empresas",
   description:
     "Fortalecemos tu empresa implementando KPIs estratégicos y metodologías innovadoras. Impulsamos el crecimiento sostenible a través del análisis de datos y la transformación digital.",

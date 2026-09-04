@@ -3,6 +3,7 @@ import AppointmentModal from "@/components/appointment-modal";
 import BlogSection from "@/components/blog-section";
 import ClientsSection from "@/components/clients-section";
 import ContactSection from "@/components/contact-section";
+import CourseCtaSection from "@/components/course-cta-section";
 import Footer from "@/components/footer";
 import HeroGeometric from "@/components/hero-geometric";
 import Navbar from "@/components/navbar";
@@ -18,6 +19,7 @@ export default function Home() {
       <ServicesSection />
       <TeamSection />
       <ProjectsSection />
+      <CourseCtaSection />
       <ClientsSection />
       <BlogSection />
       <ContactSection />
