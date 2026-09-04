@@ -111,6 +111,7 @@ export default function Footer() {
                 { name: "Sectores", href: "#services" },
                 { name: "Equipo", href: "#team" },
                 { name: "Proyectos", href: "#projects" },
+                { name: "Cursos", href: "/cursos/ai-power-worker-pro" },
                 { name: "Blog", href: "#blog" },
                 { name: "Contacto", href: "#contact" },
               ].map((link) => (
