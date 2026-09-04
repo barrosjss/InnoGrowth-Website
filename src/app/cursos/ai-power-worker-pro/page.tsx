@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Luis from "@/assets/img/luisInow.png";
+import Luis from "@/assets/img/luisInow.webp";
 
 const UTM_BASE = "utm_source=landing&utm_medium=cta&utm_campaign=ai-power-worker-pro";
 
