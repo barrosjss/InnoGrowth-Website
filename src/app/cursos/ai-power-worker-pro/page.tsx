@@ -26,8 +26,17 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Luis from "@/assets/img/luisInow.png";
 
-const WHATSAPP_URL = "https://wa.me/573004986307?text=QUIERO%20IA";
-const FORM_URL = "https://forms.gle/sBG1F2CK1yj6NwNs7";
+const UTM_BASE = "utm_source=landing&utm_medium=cta&utm_campaign=ai-power-worker-pro";
+
+type CtaContent = "hero" | "precio" | "footer" | "sticky";
+
+function formUrl(content: CtaContent) {
+  return `https://forms.gle/sBG1F2CK1yj6NwNs7?${UTM_BASE}&utm_content=${content}`;
+}
+
+function whatsappUrl(content: CtaContent) {
+  return `https://wa.me/573004986307?text=QUIERO%20IA&${UTM_BASE}&utm_content=${content}`;
+}
 
 export const metadata: Metadata = {
   title: "AI Power Worker Pro — Curso de IA para productividad | InnoGrowth",
@@ -131,7 +140,7 @@ export default function AIPowerWorkerProPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href={FORM_URL}
+                href={formUrl("hero")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 py-2 gap-2"
@@ -139,7 +148,7 @@ export default function AIPowerWorkerProPage() {
                 Inscribirme ahora <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href={WHATSAPP_URL}
+                href={whatsappUrl("hero")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-md border-2 border-primary bg-transparent text-primary hover:bg-primary/10 h-11 px-8 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 gap-2"
@@ -276,6 +285,24 @@ export default function AIPowerWorkerProPage() {
               <p className="text-lg font-semibold">$200.000 COP</p>
             </Card>
           </div>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href={formUrl("precio")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 py-2 gap-2"
+            >
+              Reservar mi cupo <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href={whatsappUrl("precio")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md border-2 border-primary bg-transparent text-primary hover:bg-primary/10 h-11 px-8 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 gap-2"
+            >
+              <MessageCircle className="h-4 w-4" /> Preguntar por WhatsApp
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -330,7 +357,7 @@ export default function AIPowerWorkerProPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={FORM_URL}
+              href={formUrl("footer")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md bg-white text-primary-700 hover:bg-gray-100 h-11 px-8 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 gap-2"
@@ -338,7 +365,7 @@ export default function AIPowerWorkerProPage() {
               Inscribirme ahora <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href={WHATSAPP_URL}
+              href={whatsappUrl("footer")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md border-2 border-white bg-transparent text-white hover:bg-white/10 h-11 px-8 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 gap-2"
@@ -352,7 +379,7 @@ export default function AIPowerWorkerProPage() {
       {/* CTA sticky mobile */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background/95 backdrop-blur border-t border-border p-3 flex gap-2">
         <Link
-          href={FORM_URL}
+          href={formUrl("sticky")}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-4 gap-2"
@@ -360,7 +387,7 @@ export default function AIPowerWorkerProPage() {
           Inscribirme
         </Link>
         <Link
-          href={WHATSAPP_URL}
+          href={whatsappUrl("sticky")}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 inline-flex items-center justify-center rounded-md border-2 border-primary text-primary h-11 px-4 text-sm font-medium gap-2"
