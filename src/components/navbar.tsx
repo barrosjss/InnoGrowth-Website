@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -118,6 +119,13 @@ export default function Navbar() {
               {item.name}
             </button>
           ))}
+          {/* Enlace al curso: es otra página, no una sección de la home, así que va como Link. */}
+          <Link
+            href="/cursos/ai-power-worker-pro"
+            className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-gray-300 hover:text-primary-300"
+          >
+            Cursos
+          </Link>
         </div>
       </div>
 
@@ -162,6 +170,15 @@ export default function Navbar() {
                   </button>
                 </div>
               ))}
+              <div className="border-b border-white/10 last:border-b-0">
+                <Link
+                  href="/cursos/ai-power-worker-pro"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block w-full py-6 px-8 text-left text-lg font-medium transition-colors duration-300 text-gray-300 hover:text-primary-300 hover:bg-white/5"
+                >
+                  Cursos
+                </Link>
+              </div>
             </div>
           </div>
 
